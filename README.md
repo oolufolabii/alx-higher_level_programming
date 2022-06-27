@@ -17,7 +17,7 @@ Python programming, Linux, Script and C, data structures and algorithm component
 
 ### Linters
 
-* [PEP8](https://github.com/PyCQA/pycodestyle/issues/466)
+* [Pycodestyle](https://github.com/PyCQA/pycodestyle/issues/466)
 
 ---
 
