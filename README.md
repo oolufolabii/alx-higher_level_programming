@@ -24,3 +24,7 @@ Python programming, Linux, Script and C, data structures and algorithm component
 ### [(231)  0x00. Python - Hello, World](./0x00-python-hello_world/)
 
 Welcome to the Python world! First introduction to the python programming language.
+
+### [(233) 0x01. Python - if/else, loops, functions](./0x01-python-if_else_loops_functions)
+
+How to use the if, if ... else statements, comments, affect values to variables, range, while and for loops.
