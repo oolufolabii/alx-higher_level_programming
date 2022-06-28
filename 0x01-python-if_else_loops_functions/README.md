@@ -41,4 +41,4 @@
 2. Write a function that creates a copy of the string, removing the character at the position n (not the Python way, the “C array index”).
 
 3. Write the Python function def magic_calculation(a, b, c): that does exactly the same as the following Python bytecode:
-[image](./Screenshot%202022-06-28%20082640.png)
+![Screenshot 2022-06-28 082640](https://user-images.githubusercontent.com/101478509/176120072-e6b1c2ca-e173-46ea-a942-24d5af33a095.png)
