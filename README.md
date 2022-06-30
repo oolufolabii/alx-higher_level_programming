@@ -15,6 +15,10 @@ Python programming, Linux, Script and C, data structures and algorithm component
 * Allowed editors: vi, vim, emacs
 * All your files should end with a new line
 
+## Useful Scripts
+
+* echo "#!"/usr/bin/python3"" | tee -a *.py
+
 ### Linters
 
 * [Pycodestyle](https://github.com/PyCQA/pycodestyle/issues/466)
