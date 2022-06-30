@@ -25,7 +25,8 @@
 1. Write a program that prints #pythoniscool, followed by a new line, in the standard output.
 
 2. Write the Python function def magic_calculation(a, b): that does exactly the same as the following Python bytecode:
-![screenshot](../../../../Pictures/Screenshot.png)
+![Screenshot](https://user-images.githubusercontent.com/101478509/176615795-002c9631-a7a1-48d6-9d71-079eccfb8992.png)
+
 
 3. Write a program that prints the alphabet in uppercase, followed by a new line.
 
