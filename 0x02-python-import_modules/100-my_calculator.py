@@ -17,7 +17,8 @@ if __name__ == "__main__":
         print("{} {} {} = {:d}".format(argv[1], argv[2], argv[3], subtraction))
     elif argv[2] == '*':
         multiplication = mul(int(argv[1]), int(argv[3]))
-        print("{} {} {} = {:d}".format(argv[1], argv[2], argv[3], multiplication))
+        print("{} {} {} = {:d}".format(argv[1], argv[2], argv[3],
+                                       multiplication))
     elif argv[2] == '/':
         quotient = div(int(argv[1]), int(argv[3]))
         print("{} {} {} = {:d}".format(argv[1], argv[2], argv[3], quotient))
