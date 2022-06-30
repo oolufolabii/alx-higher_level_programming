@@ -31,7 +31,7 @@ How to use the if, if ... else statements, comments, affect values to variables,
 
 ### [(239)0x02-python-import_modules](./0x02-python-import_modules)
 
-Python import and modules
+Python import and modules.
 
 ---
 
