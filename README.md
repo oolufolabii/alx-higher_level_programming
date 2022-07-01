@@ -37,6 +37,10 @@ How to use the if, if ... else statements, comments, affect values to variables,
 
 Python import and modules.
 
+### [(241)0x03. Python - Data Structures: Lists, Tuples](./0x03-python-data_structures)
+
+More on Python, including Python data structures, lists, list comprehension, tuples.
+
 ---
 
 ## Student
