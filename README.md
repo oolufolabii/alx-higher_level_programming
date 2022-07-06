@@ -41,6 +41,10 @@ Python import and modules.
 
 More on Python, including Python data structures, lists, list comprehension, tuples.
 
+### [(243) 0x04. Python - More Data Structures: Set, Dictionary](./0x04-python-more_data_structures)
+
+More on python data structures, when to use dictionaries versus lists or sets. How to iterate over a dictionary. What is a lambda function. What are the map, reduce and filter functions.
+
 ---
 
 ## Student
