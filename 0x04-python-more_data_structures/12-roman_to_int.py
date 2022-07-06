@@ -1,14 +1,22 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if not roman_string or type(roman_string) != str:
+    result = 0
+    last = 0
+    numerals = (('I', 1), ('V', 5), ('X', 10),
+                ('L', 50), ('C', 100), ('D', 500),
+                ('M', 1000))
+
+    if type(roman_string) is not str:
         return 0
-    roman_alphabet = {'I': 1, 'V': 5, 'X': 10,
-                      'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-    roman_numeral = 0
-    for item in range(len(roman_string)):
-        if item > 0 and roman_alphabet[roman_string[item]] > roman_alphabet[roman_string[j - 1]]:
-            roman_numeral += roman_alphabet[roman_string[item]] - 2 * \
-                roman_alphabet[roman_string[item - 1]]
-        else:
-            roman_numeral += roman_alphabet[roman_string[item]]
-    return roman_numeral
+    if roman_string is None:
+        return 0
+
+    for item in reversed(roman_string):
+        for elem in numerals:
+            if item == elem[0]:
+                if elem[1] < last:
+                    result -= elem[1]
+                else:
+                    result += elem[1]
+                last = elem[1]
+    return result
