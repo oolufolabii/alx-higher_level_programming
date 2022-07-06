@@ -25,7 +25,7 @@ Python programming, Linux, Script and C, data structures and algorithm component
 
 ---
 
-### [(231)  0x00. Python - Hello, World](./0x00-python-hello_world/)
+### [(231) 0x00. Python - Hello, World](./0x00-python-hello_world/)
 
 Welcome to the Python world! First introduction to the python programming language.
 
@@ -33,11 +33,11 @@ Welcome to the Python world! First introduction to the python programming langua
 
 How to use the if, if ... else statements, comments, affect values to variables, range, while and for loops.
 
-### [(239)0x02-python-import_modules](./0x02-python-import_modules)
+### [(239) 0x02-python-import_modules](./0x02-python-import_modules)
 
 Python import and modules.
 
-### [(241)0x03. Python - Data Structures: Lists, Tuples](./0x03-python-data_structures)
+### [(241) 0x03. Python - Data Structures: Lists, Tuples](./0x03-python-data_structures)
 
 More on Python, including Python data structures, lists, list comprehension, tuples.
 
