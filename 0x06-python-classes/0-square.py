@@ -2,8 +2,6 @@
 
 class Square:
 
-    """
-    A python class representing an empty square.
-    """
+    """A python class representing an empty square."""
 
     pass
