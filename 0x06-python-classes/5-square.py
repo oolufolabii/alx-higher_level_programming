@@ -5,7 +5,8 @@ class Square:
     A python class representing a square.
     Declared with Private Instance Attribute "size".
 
-    Public instance method "area" returns the area of the square based on its size.
+    Public instance method "area" returns
+    the area of the square based on its size.
     """
 
     def __init__(self, size=0):
@@ -20,7 +21,7 @@ class Square:
         Retrieving the size value
         """
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """
@@ -31,7 +32,7 @@ class Square:
         elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
-   
+
     def area(self):
         """
         Calculates and return the current square area based on given size.

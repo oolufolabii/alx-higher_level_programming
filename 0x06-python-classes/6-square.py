@@ -5,7 +5,8 @@ class Square:
     A python class representing a square.
     Declared with Private Instance Attribute "size".
 
-    Public instance method "area" returns the area of the square based on its size.
+    Public instance method "area" returns
+    the area of the square based on its size.
     """
 
     def __init__(self, size=0):
@@ -20,7 +21,7 @@ class Square:
         Retrieving the size value
         """
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """
@@ -44,17 +45,17 @@ class Square:
         """
         Sets the position to a value.
         """
-        
+
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        
+
         if not isinstance(value[0], int) or not isinstance(value[1], int):
             raise TypeError("position must be a tuple of 2 positive integers")
-        
+
         if value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
-   
+
     def area(self):
         """
         Calculates and return the current square area based on given size.
@@ -70,7 +71,7 @@ class Square:
         if self.__size == 0:
             print()
             return
-        
+
         else:
             for y in range(0, self.__position[1]):
                 print()
