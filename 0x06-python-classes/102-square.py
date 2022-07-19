@@ -40,7 +40,7 @@ class Square:
         if hasattr(other, 'size'):
             return self.__size <= other.__size
         return self.__size <= other
-    
+
     @property
     def size(self):
         """

@@ -14,11 +14,11 @@ class Square:
 
     Public instance method "area" returns
     the area of the square based on its size.
-    
-    Public instance method "my_print" 
+
+    Public instance method "my_print"
     """
 
-    def __init__(self, size=0, position=(0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         """
         Initializing the size data.
         """
