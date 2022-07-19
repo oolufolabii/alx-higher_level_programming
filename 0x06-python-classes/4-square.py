@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""Square generating class for Python
+"""
+
+
 class Square:
 
     """

@@ -1,9 +1,13 @@
 #!/usr/bin/python3
+"""Square generating class for Python
+"""
+
+
 class Square:
 
     """
-    A python class representing a square.
-    Declared with Private Instance Attribute "size".
+    A python class representing an empty square.
+    Declared with Instantiation with size (no type/value verification).
     """
 
     def __init__(self, size=0):
