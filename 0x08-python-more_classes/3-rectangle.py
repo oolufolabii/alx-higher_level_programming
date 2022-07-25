@@ -35,6 +35,16 @@ class Rectangle:
             rec_str += '\n'
         return rec_str[:-1]
 
+    def __repr__(self):
+        """__rep__(self)
+
+        Returns:
+            str: Return a string representation of a Rectangle instance
+        that is able to recreate a new instance by using eval()
+        """
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+
     @property
     def width(self):
         """width(self)
