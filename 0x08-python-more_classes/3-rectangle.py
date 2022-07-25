@@ -12,28 +12,28 @@ class Rectangle:
         """__init__(self, width=0, height=0)
 
         Args:
-            width (int, optional): width of the rectangle. Defaults to 0.
-            height (int, optional): height of the rectangle. Defaults to 0.
+            width (int): width of the rectangle. Defaults to 0.
+            height (int): height of the rectangle. Defaults to 0.
         """
         self.width = width
         self.height = height
 
-        def __str__(self):
-            """__str__(self)
+    def __str__(self):
+        """__str__(self)
 
             Returns:
                 str: Returns an informal and nicely printable
                 string representation of a Rectangle instance,
                 filled with the '#' character.
             """
-            if self.__height == 0 or self.__width == 0:
-                return ''
-            rec_str = ''
-            for i in range(self.__height):
-                for j in range(self.__width):
-                    rec_str += '#'
-                rec_str += '\n'
-            return rec_str[:-1]
+        if self.__height == 0 or self.__width == 0:
+            return ''
+        rec_str = ''
+        for i in range(self.__height):
+            for j in range(self.__width):
+                rec_str += '#'
+            rec_str += '\n'
+        return rec_str[:-1]
 
     @property
     def width(self):
