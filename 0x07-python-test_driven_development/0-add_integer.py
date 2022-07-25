@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Integer addition module
+"""Python Integer addition module
 """
 
 
@@ -15,7 +15,7 @@ def add_integer(a, b=98):
     Returns:
         int: sum of both values
     """
-    
+
     if type(a) is float:
         a = int(a)
     elif type(a) is not int:
@@ -25,5 +25,5 @@ def add_integer(a, b=98):
         b = int(b)
     elif type(b) is not int:
         raise TypeError('b must be an integer')
-    
+
     return a + b
