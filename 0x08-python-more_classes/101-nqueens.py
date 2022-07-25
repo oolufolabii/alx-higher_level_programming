@@ -18,7 +18,7 @@ N = int(argv[1])
 
 if N < 4:
     print('N must be at least 4')
-    
+
     exit(1)
 
 
@@ -117,6 +117,7 @@ def coordinate_format(candidates):
                     matrix[x][i].append(i)
                     matrix[x][i].append(j)
     return matrix
+
 
 # init candidates list with first column of 0s
 candidates = []
