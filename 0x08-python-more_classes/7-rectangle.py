@@ -8,6 +8,7 @@ class Rectangle:
     """A rectangle class constructed by width and height
     """
     number_of_instances = 0
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """__init__(self, width=0, height=0)
@@ -15,8 +16,9 @@ class Rectangle:
         Args:
             width (int, optional): width of the rectangle. Defaults to 0.
             height (int, optional): height of the rectangle. Defaults to 0.
-            number_of_instances(int, optional): the number of instances
-            created. Defaults to 0.
+            number_of_instances(int, optional): increments the number
+                of instances created, decrements with every deletion.
+                Defaults to 0.
         """
         self.width = width
         self.height = height
@@ -35,7 +37,7 @@ class Rectangle:
         rec_str = ''
         for i in range(self.__height):
             for j in range(self.__width):
-                rec_str += '#'
+                rec_str += str(self.print_symbol)
             rec_str += '\n'
         return rec_str[:-1]
 
