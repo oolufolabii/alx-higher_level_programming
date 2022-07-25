@@ -18,22 +18,31 @@ class Rectangle:
         self.width = width
         self.height = height
 
-        def __str__(self):
-            """__str__(self)
+    def __str__(self):
+        """__str__(self)
 
-            Returns:
+        Returns:
                 str: Returns an informal and nicely printable
                 string representation of a Rectangle instance,
                 filled with the '#' character.
-            """
-            if self.__height == 0 or self.__width == 0:
-                return ''
-            rec_str = ''
-            for i in range(self.__height):
-                for j in range(self.__width):
-                    rec_str += '#'
-                rec_str += '\n'
-            return rec_str[:-1]
+        """
+        if self.__height == 0 or self.__width == 0:
+            return ''
+        rec_str = ''
+        for i in range(self.__height):
+            for j in range(self.__width):
+                rec_str += '#'
+            rec_str += '\n'
+        return rec_str[:-1]
+
+    def __repr__(self):
+        """__repr__(self)
+
+        Returns:
+            str: Return a string representation of a Rectangle instance
+            that is able to recreate a new instance by using eval()
+        """
+        return "Rectangle({}, {})".format(self.__width, self.__height)
 
     @property
     def width(self):
