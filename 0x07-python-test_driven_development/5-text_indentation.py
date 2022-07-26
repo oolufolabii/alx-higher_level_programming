@@ -23,4 +23,4 @@ def text_indentation(text):
         text = (char + "\n\n").join(
             [line.strip(" ") for line in text.split(char)])
 
-    print(f"{text}", end="")
+    print("{}".format(text), end="")
