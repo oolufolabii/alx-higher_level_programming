@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-'''A module containing a restriced class.
-'''
+"""A module containing a restriced class.
+"""
 
 
 class LockedClass:
