@@ -2,8 +2,8 @@
 """A python class for a square
     """
 
-BaseGeometry = __import__('7-base_geometry.py').BaseGeometry
-Rectangle = __import__('9-rectangle.py').Rectangle
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
+Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
