@@ -8,8 +8,11 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 class Rectangle(BaseGeometry):
     """Rectangle class
 
-    Args:
+    Summary:
         BaseGeometry (class): inheriting from the BaseGeometry class
+    Args:
+        -width: width property of the rectangle
+        -height: height property of the rectangle
     """
 
     def __init__(self, width, height):
