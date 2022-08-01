@@ -10,6 +10,7 @@ class MyInt(int):
     Args:
         int (int)
     """
+
     def __eq__(self, __x):
         """== becomes !=
 
@@ -17,17 +18,17 @@ class MyInt(int):
             __x (object)
 
         Returns:
-            boolean 
+            boolean
         """
         return super().__ne__(__x)
-    
+
     def __ne__(self, __x):
         """!= become ==
 
         Args:
-            __x (object): 
+            __x (object)
 
         Returns:
-            boolean 
+            boolean
         """
         return super().__eq__(__x)
