@@ -23,10 +23,10 @@ class Square(Rectangle):
         super().__init__(size, size)
         self.__size = size
 
-        def __str__(self):
-            return str("[Square] {}/{}".format(self.__size, self.__size))
+    def __str__(self):
+        return "[Square] {}/{}".format(self.__size, self.__size)
 
-        def area(self):
-            """area() returns the area of the square
-            """
-            return self.__size ** 2
+    def area(self):
+        """area() returns the area of the square
+        """
+        return self.__size ** 2
