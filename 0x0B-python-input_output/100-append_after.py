@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""a python function that inserts a line of text to a file,
+"""A python function that inserts a line of text to a file,
 after each line containing a specific string
 """
 
@@ -14,7 +14,7 @@ def append_after(filename="", search_string="", new_string=""):
     """
 
     with open(filename, "r") as file:
-        text = file.readlines()
+        text = file.read()
 
     with open(filename, "w") as file_w:
         text = ""
