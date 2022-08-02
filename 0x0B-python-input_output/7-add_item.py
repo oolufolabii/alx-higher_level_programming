@@ -5,23 +5,29 @@ and then save them to a file.
 """
 
 import sys
-import json
-import os.path
-
 
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 
+try:
+    file = load_from_json_file("add_item.json")
+except FileNotFoundError:
+    file = []
 
-my_file = 'add_item.json'
+argc = len(sys.argv)
+for item in range(1, argc):
+    file.append(sys.argv[item])
+save_to_json_file(file, "add_item.json")
 
-my_list = []
+# my_file = 'add_item.json'
 
-if os.path.exists(my_file) and os.path.getsize(my_file) > 0:
-    my_list = load_from_json_file(my_file)
+# my_list = []
 
-if len(sys.argv) > 1:
-    for elem in sys.argv[1:]:
-        my_list.append(elem)
+# if os.path.exists(my_file) and os.path.getsize(my_file) > 0:
+#     my_list = load_from_json_file(my_file)
 
-save_to_json_file(my_list, my_file)
+# if len(sys.argv) > 1:
+#     for elem in sys.argv[1:]:
+#         my_list.append(elem)
+
+# save_to_json_file(my_list, my_file)
