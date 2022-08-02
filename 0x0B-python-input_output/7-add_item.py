@@ -1,18 +1,23 @@
 #!/usr/bin/python3
-"""0x0B. Python - Input/Output, task 9. Load, add, save  """
+"""a module that adds all arguments to a Python list,
+and then save them to a file.
+"""
 
+import sys
+import os.path
 
-from sys import argv
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
+load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
-argv_edit = argv[1:]
+file = 'add_item.json'
 
-try:
-    content_list = load_from_json_file("add_item.json")
-except:
-    content_list = []
-finally:
-    for arg in argv_edit:
-        content_list.append(arg)
-    save_to_json_file(content_list, "add_item.json")
+arg_list = []
+
+if os.path.exists(file) and os.path.getsize(file) > 0:
+    arg_list = load_from_json_file(file)
+
+if len(sys.argv) > 1:
+    for item in sys.argv[1:]:
+        arg_list.append(item)
+
+save_to_json_file(arg_list, file)

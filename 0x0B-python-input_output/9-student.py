@@ -3,7 +3,7 @@
     """
 
 
-class student:
+class Student:
     """A class defining a student
     """
 
