@@ -7,7 +7,8 @@ def read_file(filename=""):
     """read_file(filename)
 
     Args:
-        filename (str, optional): The filename to read and stdout. Defaults to "".
+        filename (str, optional): The filename to read and stdout.
+        Defaults to "".
     """
     with open(filename, encoding="utf-8") as file:
         data = file.read()

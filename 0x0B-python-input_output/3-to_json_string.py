@@ -8,7 +8,7 @@ def to_json_string(my_obj):
     """to_json_string(my_obj)
 
     Args:
-        my_obj (object): a string 
+        my_obj (object): a string
 
     Returns:
         mj_obj: returns the JSON format of my_obj

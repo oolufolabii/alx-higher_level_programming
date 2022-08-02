@@ -7,7 +7,8 @@ def append_write(filename="", text=""):
     """append_write(filename, text)
 
     Args:
-        filename (str, optional): Name of the file, with its extension. Defaults to "".
+        filename (str, optional): Name of the file, with its extension.
+        Defaults to "".
         text (str, optional): String to write to the file. Defaults to "".
 
     Returns:
