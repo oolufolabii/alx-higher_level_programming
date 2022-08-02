@@ -13,13 +13,14 @@ def append_after(filename="", search_string="", new_string=""):
         new_string: new_string to append
     """
 
-    with open(filename, "r") as file:
-        text = file.read()
-
-    with open(filename, "w") as file_w:
-        text = ""
-        for line in text:
-            text += line
+    with open(filename, 'r+', encoding='utf-8') as new_file:
+        lines = new_file.readlines()
+        new_file.seek(0)
+        for i, line in enumerate(lines):
+            #            print("read:   {}".format(line), end='')
             if search_string in line:
-                text += new_string
-        file_w.write(text)
+                lines[i] = line + new_string
+                #                print("modded: {}".format(line), end='')
+    #        for line in lines:
+    #            print(line, end="")
+        new_file.writelines(lines)
