@@ -19,20 +19,17 @@ class Base:
         Raises:
             TypeError: if id is not an integer, raises error
         """
+        if type(id) != int and id is not None:
+            raise TypeError("id must be an integer")
         if id is not None:
-            if type(id) is not int:
-                raise TypeError("id must be an integer")
             self.id = id
-        
-        # if type(id) is not int:
-        #     raise TypeError("id must be an integer")
-
-        # if id is not None:
-        #     self.id = id
-
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+        # else:
+        #     Base.__nb_objects += 1
+        #     self.id = Base.__nb_objects
 
 
 b1 = Base()
