@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-
 """
 Create a Square class, inheriting from Rectangle.
 """
 
-from models.base import Base
 from models import Rectangle
 
 
