@@ -165,52 +165,33 @@ class Rectangle(Base):
             KeyError: for keyword arguments
             TypeError: for argument not an integer
         """
-        if len(args) == 0:
-            if len(kwargs) == 0 or len(kwargs) > 5:
-                raise TypeError(
-                    "Rectangle takes between 1 to 5 keyword"
-                    "or non-keyword arguments")
-
-            else:
-                for key, value in kwargs.items():
-                    if key == "id":
-                        if type(value) != int and value is not None:
-                            raise TypeError("id must be an integer")
-                        self.id = value
-                    elif key == 'width':
-                        self.width = value
-                    elif key == 'height':
-                        self.height = value
-                    elif key == 'x':
-                        self.x = value
-                    elif key == 'y':
-                        self.y = value
-                    else:
-                        raise KeyError('invalid attribute name: ' +
-                                       '{}'.format(key))
-
-        elif len(args) > 5:
-            raise TypeError(
-                "Rectangle takes between 1 to 5 keyword or"
-                "non-keyword arguments")
-
+        if args is not None and len(args) != 0:
+            if len(args) >= 1:
+                if type(args[0]) != int and args[0] is not None:
+                    raise TypeError("id must be an integer")
+                self.id = args[0]
+            if len(args) > 1:
+                self.width = args[1]
+            if len(args) > 2:
+                self.height = args[2]
+            if len(args) > 3:
+                self.x = args[3]
+            if len(args) > 4:
+                self.y = args[4]
         else:
-            for i, arg in enumerate(args):
-                if i == 0:
-                    if self.id != arg:
-                        self.id = arg
-
-                    elif i == 1:
-                        self.width = arg
-
-                    elif i == 2:
-                        self.height = arg
-
-                    elif i == 3:
-                        self.x = arg
-
-                    elif i == 4:
-                        self.y = arg
+            for key, value in kwargs.items():
+                if key == "id":
+                    if type(value) != int and value is not None:
+                        raise TypeError("id must be an integer")
+                    self.id = value
+                if key == "width":
+                    self.width = value
+                if key == "height":
+                    self.height = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
 
     def to_dictionary(self):
         """to_dictionary(self):
