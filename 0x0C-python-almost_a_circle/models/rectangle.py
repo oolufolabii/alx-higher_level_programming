@@ -154,9 +154,8 @@ class Rectangle(Base):
         """Return a string representation for the instance
         """
 
-        string_out = "[Rectangle] ({}) {}/{} - "
-        "{}/{}".format(self.id,
-                       self.x, self.y, self.width, self.height)
+        string_out = "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height)
         return string_out
 
     def update(self, *args, **kwargs):
