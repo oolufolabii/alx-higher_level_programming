@@ -58,23 +58,17 @@ class Base:
         Raises:
             TypeError: must be a list of instances
         """
-        if (type(list_objs) != list and
-           list_objs is not None or
-           not all(isinstance(x, cls) for x in list_objs)):
-            raise TypeError("list_objs must be a list of instances")
+        if list_objs is None:
+            list_objs = []
 
-        file_name = cls.__name__ + ".csv"
-        with open(file_name, 'w') as file:
-            if list_objs is not None:
-                list_objs = [x.to_dictionary() for x in list_objs]
-                if cls.__name__ == 'Rectangle':
-                    fields = ['id', 'width', 'height', 'x', 'y']
-                elif cls.__name__ == 'Square':
-                    fields = ['id', 'size', 'x', 'y']
-                writer = cls.to_json_string(file)
-                writer = csv.DictWriter(file, fieldnames=fields)
-                writer.writeheader()
-                writer.writerows(list_objs)
+        list_dicts = []
+        for item in list_objs:
+            list_dicts.append(item.to_dictionary())
+        json_dict = cls.to_json_string(list_dicts)
+
+        filename = cls.__name__ + '.json'
+        with open(filename, 'w', encoding='utf-8') as file:
+            file.write(json_dict)
 
     @staticmethod
     def from_json_string(json_string):
@@ -122,8 +116,6 @@ class Base:
                     string_list.append(cls.create(**d))
         return string_list
 
-    
-                
     @classmethod
     def load_from_file_csv(cls):
         """Deserializes CSV format from a file.
