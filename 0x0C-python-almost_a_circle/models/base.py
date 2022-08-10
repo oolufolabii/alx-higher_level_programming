@@ -151,20 +151,20 @@ class Base:
             - list_squares: list of Square instances
         """
 
-        from turtle import Turtle
+        import turtle
         import time
         from random import randrange
 
-        t = Turtle()
+        t = turtle.Turtle()
         t.color("beige")
-        t.bgcolor("violet")
+        turtle.bgcolor("violet")
         t.shape("square")
         t.pensize(8)
 
         for i in (list_rectangles + list_squares):
             t.penup()
             t.setpos(0, 0)
-            t.Screen().colormode(255)
+            turtle.Screen().colormode(255)
             t.pencolor((randrange(255), randrange(255), randrange(255)))
             Base.draw_rect(t, i)
             time.sleep(1)
@@ -172,8 +172,7 @@ class Base:
 
     @staticmethod
     def draw_rect(t, rect):
-        """Helper method that draws a Rectangle
-        or Square.
+        """To draw a square or rectangle from the Base instance.
         """
 
         t.penup()
