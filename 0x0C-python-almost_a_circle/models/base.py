@@ -3,7 +3,8 @@
     """
 
 import json
-from os import stat
+import csv
+import os
 
 
 class Base:
@@ -45,3 +46,77 @@ class Base:
             raise TypeError("list_dictionaries must be a list of dictionaries")
 
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """save_to_file(cls, list_objs)
+
+
+        Args:
+            list_objs (list): a list of instances
+
+        Raises:
+            TypeError: must be a list of instances
+        """
+        if (type(list_objs) != list and
+           list_objs is not None or
+           not all(isinstance(x, cls) for x in list_objs)):
+            raise TypeError("list_objs must be a list of instances")
+
+        file_name = cls.__name__ + ".csv"
+        with open(file_name, 'w') as file:
+            if list_objs is not None:
+                list_objs = [x.to_dictionary() for x in list_objs]
+                if cls.__name__ == 'Rectangle':
+                    fields = ['id', 'width', 'height', 'x', 'y']
+                elif cls.__name__ == 'Square':
+                    fields = ['id', 'size', 'x', 'y']
+                writer = csv.DictWriter(file, fieldnames=fields)
+                writer.writeheader()
+                writer.writerows(list_objs)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns the list of the JSON string representation json_string.
+
+        Args:
+            - json_string: string to convert to list
+        """
+
+        string_list = []
+        if json_string is not None and json_string != '':
+            if type(json_string) != str:
+                raise TypeError("json_string must be a string")
+            string_list = json.loads(json_string)
+        return string_list
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attributes already set.
+
+        Args:
+            - dictionary: used as **kwargs
+
+        Returns: instance created
+        """
+        if cls.__name__ == 'Rectangle':
+            dummy = cls(1, 1)
+        elif cls.__name__ == 'Square':
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances."""
+
+        file_name = cls.__name__ + ".json"
+        string_list = []
+        list_dicts = []
+        if os.path.exists(file_name):
+            with open(file_name, 'r') as file:
+                s = file.read()
+                list_dicts = cls.from_json_string(s)
+                for d in list_dicts:
+                    string_list.append(cls.create(**d))
+        return string_list
