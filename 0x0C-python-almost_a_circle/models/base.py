@@ -151,20 +151,20 @@ class Base:
             - list_squares: list of Square instances
         """
 
-        import turtle
+        from turtle import Turtle
         import time
         from random import randrange
 
-        t = turtle.Turtle()
+        t = Turtle()
         t.color("beige")
-        turtle.bgcolor("violet")
+        t.bgcolor("violet")
         t.shape("square")
         t.pensize(8)
 
         for i in (list_rectangles + list_squares):
             t.penup()
             t.setpos(0, 0)
-            turtle.Screen().colormode(255)
+            t.Screen().colormode(255)
             t.pencolor((randrange(255), randrange(255), randrange(255)))
             Base.draw_rect(t, i)
             time.sleep(1)
