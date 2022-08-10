@@ -124,7 +124,7 @@ class Base:
         """
 
         filename = cls.__name__ + ".csv"
-        l = []
+        string_list = []
         if os.path.exists(filename):
             with open(filename, 'r') as f:
                 reader = csv.reader(f, delimiter=',')
@@ -138,8 +138,8 @@ class Base:
                         for j, e in enumerate(row):
                             if e:
                                 setattr(i, fields[j], int(e))
-                        l.append(i)
-        return l
+                        string_list.append(i)
+        return string_list
 
     @staticmethod
     def draw(list_rectangles, list_squares):
