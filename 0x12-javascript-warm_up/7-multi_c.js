@@ -6,8 +6,8 @@ if (Number.isNaN(argChecker) || argChecker === undefined) {
   console.log('Missing number of occurrences');
 } else {
   let i = 0;
-  while (i < argChecker){
+  while (i < argChecker) {
     console.log(sentence);
     i++;
-  }  
+  }
 }
