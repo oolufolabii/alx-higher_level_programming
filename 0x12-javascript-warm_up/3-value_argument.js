@@ -3,7 +3,7 @@
 const argsChecker = process.argv[2];
 
 if (argsChecker === undefined) {
-    console.log('No argument');
+  console.log('No argument');
 } else {
-    console.log(argsChecker);
+  console.log(argsChecker);
 }
