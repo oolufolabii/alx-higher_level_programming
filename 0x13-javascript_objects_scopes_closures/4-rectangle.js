@@ -18,7 +18,6 @@ class Rectangle {
 
     this.width = h;
     this.height = w;
-
   }
 
   double () {
