@@ -18,10 +18,11 @@ if __name__ == '__main__':
         state_input = sys.argv[4]
         cur = db_connection.cursor()
 
-        cur.execute('SELECT cities.name FROM cities LEFT JOIN'
-                    ' states ON stateS.id = cities.states_id'
-                    ' WHERE BINARY states.name=%s'
-                    ' ORDER BY cities.id ASC;', [state_input]
+        cur.execute('SELECT cities.name FROM cities' +
+                    ' INNER JOIN states ON cities.state_id = states.id' +
+                    ' WHERE BINARY states.name = %s' +
+                    ' ORDER BY cities.id ASC;',
+                    [state_input]
                     )
 
         row_result = cur.fetchall()
