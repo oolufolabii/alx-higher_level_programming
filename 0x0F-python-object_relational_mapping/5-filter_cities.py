@@ -15,12 +15,13 @@ if __name__ == '__main__':
                                         passwd=sys.argv[2],
                                         db=sys.argv[3])
 
-        cur = db_connection.cursor()
         state_input = sys.argv[4]
+        cur = db_connection.cursor()
+
         cur.execute('SELECT cities.name FROM cities LEFT JOIN'
-                    'states ON stateS.id = cities.states_id'
-                    'WHERE BINARY states.name=%s'
-                    'ORDER BY cities.id ASC;', [state_input]
+                    ' states ON stateS.id = cities.states_id'
+                    ' WHERE BINARY states.name=%s'
+                    ' ORDER BY cities.id ASC;', [state_input]
                     )
 
         row_result = cur.fetchall()
