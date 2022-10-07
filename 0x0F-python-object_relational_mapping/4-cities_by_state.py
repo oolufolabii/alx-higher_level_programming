@@ -16,9 +16,9 @@ if __name__ == '__main__':
                                         db=sys.argv[3])
 
         cur = db_connection.cursor()
-        
+
         cur.execute('SELECT cities.id, cities.name, states.name FROM cities'
-                    'INNER JOIN states ON cities.states_id = states.id'
+                    'LEFT JOIN states ON states.id = cities.state_id'
                     'ORDER BY cities.id ASC;'
                     )
 
