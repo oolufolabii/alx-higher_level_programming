@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 '''
-a script that takes in an argument and displays all values
-in the states table of hbtn_0e_0_usa where name matches the argument.
-Safe from MySQL injection
+a script that lists all cities from the database hbtn_0e_4_usa
 '''
 
 if __name__ == '__main__':
@@ -18,8 +16,11 @@ if __name__ == '__main__':
                                         db=sys.argv[3])
 
         cur = db_connection.cursor()
-        cur.execute("SELECT * FROM states WHERE name like BINARY '{}'"
-                    "ORDER BY states.id ASC;".format(sys.argv[4]))
+        
+        cur.execute('SELECT cities.id, cities.name, states.name FROM cities'
+                    'INNER JOIN states ON cities.states_id = states.id'
+                    'ORDER BY cities.id ASC;'
+                    )
 
         row_result = cur.fetchall()
         for row in row_result:
