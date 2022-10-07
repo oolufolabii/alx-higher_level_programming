@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 '''
 a script that takes in an argument and displays all values
 in the states table of hbtn_0e_0_usa where name matches the argument.
@@ -18,7 +17,7 @@ if __name__ == '__main__':
                                         db=sys.argv[3])
 
         cur = db_connection.cursor()
-        cur.execute("SELECT * FROM states WHERE name like BINARY {}"
+        cur.execute("SELECT * FROM states WHERE name like BINARY '{}'"
                     "ORDER BY states.id ASC;".format(sys.argv[4]))
 
         row_result = cur.fetchall()
