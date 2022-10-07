@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
         cur = db_connection.cursor()
         state_input = sys.argv[4]
-        cur.execute("SELECT * FROM states WHERE name = %s"
+        cur.execute("SELECT * FROM states WHERE name=%s"
                     "ORDER BY states.id ASC;", state_input)
 
         row_result = cur.fetchall()
