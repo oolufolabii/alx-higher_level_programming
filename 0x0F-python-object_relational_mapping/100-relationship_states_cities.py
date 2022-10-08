@@ -20,12 +20,10 @@ if __name__ == '__main__':
 
     session = Session(engine)
 
-    new_city_name = City(name='San Francisco')
-
-    new_state_name = State(name='California')
-    new_state_name.cities.append(new_city_name)
-
-    session.add_all([new, new_city_name])
+    new_city = City(name='San Francisco')
+    new = State(name='California')
+    new.cities.append(new_city)
+    session.add_all([new, new_city])
 
     session.commit()
 
