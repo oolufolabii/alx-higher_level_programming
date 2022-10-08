@@ -23,7 +23,7 @@ if __name__ == '__main__':
         .first()
 
     if state:
-        print('{}: {}'.format(state.id))
+        print('{}'.format(state.id))
     else:
         print('Not found')
 
