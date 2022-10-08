@@ -3,9 +3,6 @@
 script that adds the State object “Louisiana” to the database hbtn_0e_6_usa
 '''
 
-from model_state import Base
-
-
 if __name__ == '__main__':
     import sys
     from model_state import State, Base

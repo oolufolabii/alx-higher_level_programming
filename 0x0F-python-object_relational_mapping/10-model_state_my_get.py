@@ -4,9 +4,6 @@ Script that prints the State object with the name passed as
 argument from the database hbtn_0e_6_usa
 '''
 
-from model_state import Base
-
-
 if __name__ == '__main__':
     import sys
     from model_state import State, Base
@@ -26,7 +23,7 @@ if __name__ == '__main__':
         .first()
 
     if state:
-        print('{}: {}'.format(state.id. state.name))
+        print('{}: {}'.format(state.id, state.name))
     else:
         print('Not found')
 
