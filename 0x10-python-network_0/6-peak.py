@@ -2,9 +2,6 @@
 """ function to find peak value in a list """
 
 
-from audioop import reverse
-
-
 def find_peak(list_of_integers):
     """find_peak(list_of_integers)
 
