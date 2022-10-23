@@ -6,7 +6,6 @@ Usage: ./100-github_commits.py repository_name repository_owner_name
 import requests
 import sys
 
-
 if __name__ == "__main__":
     if len(sys.argv) > 2:
         repository_name = sys.argv[1]

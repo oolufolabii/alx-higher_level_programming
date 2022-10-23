@@ -10,6 +10,7 @@ if __name__ == '__main__':
 
     form_data = [('q', query)]
     response = requests.post(url, data=form_data)
+
     try:
         json_content = response.json()
         if json_content:
