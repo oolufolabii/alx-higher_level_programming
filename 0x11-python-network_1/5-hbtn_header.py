@@ -6,6 +6,8 @@ X-Request-Id variable found in the header of the response"""
 if __name__ == "__main__":
     import requests
     import sys
-
-    data = requests.get(sys.argv[1])
-    print(data.headers.get('X-Request-Id'))
+    if len(sys.argv) > 1:
+        url = sys.argv[1]
+        response = requests.get(url)
+        if 'X-Request-Id' in response.headers:
+            print(response.headers['X-Request-Id'])

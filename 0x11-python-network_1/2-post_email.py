@@ -6,13 +6,12 @@ as a parameter, and displays the body of the response
 (decoded in utf-8)"""
 
 if __name__ == "__main__":
-    import urllib.request
-    import urllib.parse
+    from urllib import parse, request
     import sys
 
-    value = {'email': sys.argv[2]}
-    data = urllib.parse.urlencode(value)
-    data_formatted = data.encode('ascii')
-    req = urllib.request.Request(sys.argv[1], data_formatted)
-    with urllib.request.urlopen(req) as response:
-        print(response.read().decode("utf-8", "replace"))
+    if len(sys.argv) > 2:
+        url = sys.argv[1]
+        email = sys.argv[2]
+        form_data = bytes(parse.urlencode([('email', email)]), 'utf-8')
+        with request.urlopen(sys.argv[1], data=form_data) as response:
+            print(response.read().decode('utf-8'))
