@@ -3,19 +3,19 @@ const request = require('request');
 
 if (process.argv.length > 2) {
   request(process.argv[2], (err, res, body) => {
-    const report = {};
+    const aggregate = {};
 
     if (err) {
       console.log(err);
     }
     JSON.parse(body).forEach(element => {
       if (element.completed) {
-        if (!report[element.userId]) {
-          report[element.userId] = 0;
+        if (!aggregate[element.userId]) {
+          aggregate[element.userId] = 0;
         }
-        report[element.userId]++;
+        aggregate[element.userId]++;
       }
     });
-    console.log(report);
+    console.log(aggregate);
   });
 }
