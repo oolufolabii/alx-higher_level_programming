@@ -1,4 +1,5 @@
 #!/usr/bin/node
+
 const request = require('request');
 const BASE_URL = 'https://swapi-api.hbtn.io/api';
 

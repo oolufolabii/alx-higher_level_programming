@@ -6,11 +6,10 @@ if (process.argv.length > 2) {
     if (err) {
       console.log(err);
     } else if (body) {
-      const charFilms = JSON.parse(body).results.filter(
-        x => x.characters.find(y => y.match(/\/people\/18\/?$/))
-      );
-
-      console.log(charFilms.length);
+      const nb = JSON.parse(body).results.filter((elem) => {
+        return elem.characters.filter((url) => { return url.includes('18'); }).length;
+      }).length;
+      console.log(nb);
     }
   });
 }
