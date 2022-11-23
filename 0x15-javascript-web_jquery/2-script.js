@@ -1,4 +1,4 @@
 'use strict';
-$('DIV#red_header').click(()=>{
+$('DIV#red_header').click(() => {
   $('header').css('color', '#FF0000');
 });
