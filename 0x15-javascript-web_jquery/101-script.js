@@ -1,13 +1,15 @@
-window.addEventListener('DOMContentLoaded', () => {
+'use strict';
+$(() => {
   $('DIV#add_item').click(() => {
-    $('<li>Item</li>').appendTo('UL.my_list');
+    $('UL.my_list').append('<li>Item</li>');
   });
   $('DIV#remove_item').click(() => {
-    $('.my_list li').last().remove();
+    const lastEl = $('UL.my_list').children().last();
+    if (lastEl) {
+      lastEl.remove();
+    }
   });
   $('DIV#clear_list').click(() => {
-    $('.my_list li').map(() => {
-      this.remove();
-    });
+    $('UL.my_list').empty();
   });
 });
